@@ -1,0 +1,11 @@
+.card img{ width: 100%; }
+.box {  
+    position: relative;
+}
+
+.box p {
+    position: absolute;
+    font-size: 5.0em;
+    top: 30%;
+    color:tomato;
+}
