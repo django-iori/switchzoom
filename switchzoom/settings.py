@@ -38,11 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'zoompost.apps.ZoompostConfig',
-    'accounts.apps.AccountsConfig',
-    'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'django_ses',
 ]
 
 MIDDLEWARE = [
