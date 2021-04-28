@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django_mysql.models import ListCharField
 
 class GuestModel(models.Model):
     name = models.CharField(max_length=20, blank=True)
