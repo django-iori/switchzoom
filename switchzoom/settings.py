@@ -25,7 +25,7 @@ SECRET_KEY = 'rq6qya4t=2bb^1@*-1w2mahk**wyeon#d%^n3&kgg_5z!25!ba'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ec2-3-139-179-39.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['3.139.179.39']
 
 
 # Application definition
@@ -120,10 +120,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL='/mediamedia/'
 
 STATIC_ROOT = '/usr/share/nginx/html/static'
-MEDIA_ROOT = '/usr/share/nginx/html/media'
 
 AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
