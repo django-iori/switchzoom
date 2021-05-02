@@ -25,7 +25,7 @@ SECRET_KEY = 'rq6qya4t=2bb^1@*-1w2mahk**wyeon#d%^n3&kgg_5z!25!ba'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.139.179.39']
+ALLOWED_HOSTS = ['13.59.177.115']
 
 
 # Application definition
@@ -119,8 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
 STATIC_ROOT = '/usr/share/nginx/html/static'
 
 AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
