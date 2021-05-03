@@ -38,7 +38,7 @@ def registerview(request, date):
 
 def homeview(request):
 
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def intervalview(request):
     return render(request, 'interval.html')
