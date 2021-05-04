@@ -16,7 +16,7 @@ def registerview(request, date):
         model.email = request.POST['email']
         model.event_date = request.POST['event_date']
 
-        with open('C:/Users/ioio4/Documents/member_{}.csv'.format(request.POST['event_date']), mode='a') as f:
+        with open('/usr/share/nginx/html/static/csv/member_{}.csv'.format(request.POST['event_date']), mode='a') as f:
             writer = csv.writer(f)
             writer.writerow([
                 request.POST['name'],
