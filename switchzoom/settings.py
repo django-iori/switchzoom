@@ -125,7 +125,7 @@ AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
 AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
 EMAIL_BACKEND = 'django_ses.SESBackend'
 
-LOGGING = {
+"""LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     # ログ出力フォーマットの設定
@@ -159,5 +159,5 @@ LOGGING = {
             'propagate': False,
         },
     },
-}
+}"""
 
