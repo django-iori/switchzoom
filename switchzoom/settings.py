@@ -140,7 +140,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': '/var/log/{}/app.log'.format(PROJECT_NAME),
+            'filename': '/var/log/switchzoom/zoompost.log',
             'formatter': 'production',
         },
     },
