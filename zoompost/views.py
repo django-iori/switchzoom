@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
 from .models import GuestModel
 import csv
+import requests 
 
 
 def registerview(request, date):
@@ -15,6 +16,20 @@ def registerview(request, date):
         model.university = request.POST['university']
         model.email = request.POST['email']
         model.event_date = request.POST['event_date']
+
+        api = "https://notify-api.line.me/api/notify"
+        token = "0wCPeo8wg56X7caRHcX1ERVR0EFg7GsS0MW8NeyUd7n"
+        headers = {"Authorization" : "Bearer "+ token}
+
+        message = "名前：{0}　性別：{1}　年齢：{2}　日程：{3}".format(
+            request.POST['name'],
+            request.POST['gender'],
+            request.POST['age'],
+            request.POST['event_date']
+            )
+        payload = {"message" :  message}
+
+        post = requests.post(api, headers = headers, params=payload, files=None)
 
         with open('/usr/share/nginx/html/static/zoompost/csv/member_{}.csv'.format(request.POST['event_date']), mode='a') as f:
             writer = csv.writer(f)
