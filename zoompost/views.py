@@ -31,7 +31,7 @@ def registerview(request, date):
 
         post = requests.post(api, headers = headers, params=payload, files=None)
 
-        with open('/usr/share/nginx/html/static/zoompost/csv/member_{}.csv'.format(request.POST['event_date']), mode='a') as f:
+        with open('/usr/share/nginx/html/static/zoompost/csv/member_{0}_{1}.csv'.format(request.POST['event_date'],request.POST['gender']), mode='a') as f:
             writer = csv.writer(f)
             writer.writerow([
                 request.POST['name'],
