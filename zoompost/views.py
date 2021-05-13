@@ -7,7 +7,6 @@ import requests
 
 
 def registerview(request, date):
-    form=RegisterForm()
     if request.method=='POST':
         model=GuestModel()
         model.name=request.POST['name']
@@ -16,16 +15,18 @@ def registerview(request, date):
         model.university = request.POST['university']
         model.email = request.POST['email']
         model.event_date = request.POST['event_date']
+        model.save()    
 
         api = "https://notify-api.line.me/api/notify"
         token = "0wCPeo8wg56X7caRHcX1ERVR0EFg7GsS0MW8NeyUd7n"
         headers = {"Authorization" : "Bearer "+ token}
 
-        message = "名前：{0}　性別：{1}　年齢：{2}　日程：{3}".format(
+        message = "名前：{0}　性別：{1}　年齢：{2}　日程：{3}　人数：{4}".format(
             request.POST['name'],
             request.POST['gender'],
             request.POST['age'],
-            request.POST['event_date']
+            request.POST['event_date'],
+            request.POST['member']
             )
         payload = {"message" :  message}
 
@@ -38,12 +39,13 @@ def registerview(request, date):
                 request.POST['gender'],
                 request.POST['email'],
                 request.POST['age'],
-                request.POST['university']
+                request.POST['university'],
+                request.POST['member'],
+                "",
+                request.POST['friend_name'],
+                request.POST['friend_email']
                 ])
-        f.close()
-            
-        model.save()
-
+        f.close()    
         return render(request, 'interval.html')
 
     else:
@@ -57,5 +59,7 @@ def homeview(request):
 
 def intervalview(request):
     return render(request, 'interval.html')
+
+
 
 
